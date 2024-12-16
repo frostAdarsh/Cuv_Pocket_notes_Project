@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const NoteForm = ({ addNote }) => {
-  const [notes, setNotes] = useState("");
+  const [noteText, setNoteText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,14 +22,13 @@ const NoteForm = ({ addNote }) => {
     const formattedTime = timeFormatter.format(currentDate);
 
     const newNote = {
-      notes: notes,
-      timesdate: `${formattedDate}`,
-      times: `${formattedTime}`,
-      
+      notes: noteText,
+      timesdate: formattedDate,
+      times: formattedTime,
     };
 
     addNote(newNote);
-    setNotes("");
+    setNoteText(""); 
   };
 
   return (
@@ -39,13 +38,15 @@ const NoteForm = ({ addNote }) => {
           <input
             className="notes_input"
             type="text"
-            value={notes}
-            placeholder="Enter your text here..........."
-            onChange={(e) => setNotes(e.target.value)}
+            value={noteText}
+            placeholder="Enter your text here..."
+            onChange={(e) => setNoteText(e.target.value)}
           />
         </div>
         <div>
-          <button className="notes_btn" type="submit"></button>
+          <button className="notes_btn" type="submit">
+            
+          </button>
         </div>
       </form>
     </div>

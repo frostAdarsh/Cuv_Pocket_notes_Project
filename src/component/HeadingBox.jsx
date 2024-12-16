@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NoteForm from "./NoteForm";
 import Notes from "./Notes";
 
 const HeadingBox = ({ groupName, selectedColor }) => {
   const [notes, setNotes] = useState([]);
+
+  
+  useEffect(() => {
+    const storedNotes = JSON.parse(localStorage.getItem(groupName)) || [];
+    setNotes(storedNotes);
+  }, [groupName]);
+
+  
+  useEffect(() => {
+    if (notes.length > 0) {
+      localStorage.setItem(groupName, JSON.stringify(notes));
+    }
+  }, [notes, groupName]);
+
   const addNote = (newNote) => {
-    setNotes((pre) => [...pre, newNote]);
+    setNotes((prevNotes) => [...prevNotes, newNote]);
   };
+
   const getInitials = (groupName) => {
     const words = groupName.split(" ");
     if (words.length === 1) {
@@ -16,6 +31,7 @@ const HeadingBox = ({ groupName, selectedColor }) => {
   };
 
   const initials = getInitials(groupName);
+
   return (
     <div className="box">
       <div className="heading_box">
