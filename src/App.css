@@ -386,4 +386,8 @@
     position: sticky;
     float: right;
   }
+  .heading_box_two {
+    height: 35rem;
+    overflow: auto;
+  }
 }
