@@ -296,7 +296,7 @@
   background-position: center;
 }
 
-.show_notes{
+.show_notes {
   border: none;
   outline: none;
   padding: 0.8em;
@@ -307,21 +307,83 @@
   border-radius: 0.3rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.time_flex{
+.time_flex {
   display: flex;
   flex-direction: row;
 }
-.time_show{
+.time_show {
   color: #353535;
   font-family: Roboto;
   font-weight: 500;
   font-size: 1rem;
-  margin-right:1rem ;
-  
+  margin-right: 1rem;
 }
 
-
-.time_st{
+.time_st {
   margin-top: 1rem;
   margin-left: 54rem;
+}
+
+@media screen and (max-width: 480px) {
+  .notebox_one {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .slideBox_one {
+    width: 100vw;
+  }
+  .DataBox_one {
+    width: 100vw;
+  }
+
+  .imageone {
+    width: 230px;
+    height: 130px;
+  }
+
+  .usedetails_one {
+    font-size: 2.2rem;
+  }
+
+  .usedetails_two {
+    font-size: 0.7rem;
+  }
+
+  .textcreategroup {
+    font-size: 0.9rem;
+  }
+
+  .textgroup {
+    font-size: 0.8rem;
+  }
+
+  .group_name_input {
+    width: 15rem;
+  }
+  .text_choose_colour {
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+
+  .box {
+    width: 100vw;
+    height: 100vh;
+    background-color: #dae5f5;
+  }
+
+  .notes_input {
+    width: 20rem;
+  }
+  .time_show {
+    font-size: 0.5rem;
+  }
+  .time_st {
+    margin-left: 12rem;
+  }
+  .upper {
+    position: sticky;
+    float: right;
+  }
 }

@@ -74,6 +74,8 @@ const EnterName = ({ handleClose }) => {
                   margin: "0.3rem",
                   border: selectedColor === color ? "1px solid black" : "none",
                   cursor: "pointer",
+                  
+                  
                 }}
                 onClick={() => setSelectedColor(color)}
               />
