@@ -5,7 +5,9 @@ const Note = ({ notes, timesdate, times }) => {
         <div className="time_st">
           <div className="time_flex">
             <div className="time_show">{timesdate}</div>
-            <div className="time_show">.</div>
+            <div className="time_show">
+              <div className="ts_dot"></div>
+            </div>
             <div className="time_show">{times}</div>
           </div>
         </div>
